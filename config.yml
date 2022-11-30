@@ -1,0 +1,9 @@
+DATA_PATH: './data/'
+OUTPUT_PATH: './output/'
+INPUT_FILE: 'Wholesale_customers_samp.csv'
+ROW_ENTITIES: 'Store'
+ID_COL: 
+DIST_COLS: ['Fresh','Milk','Grocery','Frozen','Detergents_Paper','Delicassen']
+DIMENSION_COLS: ['Channel', 'Region'] 
+OUTPUT_DIST: 'distance_matrix.csv'
+OUTPUT_PAIRS: 'distance_pairs.csv'
