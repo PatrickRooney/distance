@@ -1,4 +1,6 @@
-data/
+t*.csv
+Wholesale_customers_data.csv
+*.ods
 docs/
 images/
 output/

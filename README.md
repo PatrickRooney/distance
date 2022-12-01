@@ -25,15 +25,27 @@ The config.yml file contains the following:
 
  3. How to Install and Run the Project:
 
- After filling the applicable values in the config.yml file, the script may be run at the Linux command line by issuing
+I created the [distance repo](https://github.com/PatrickRooney/distance) on a laptop running Ubuntu version 20.04.5 and Python version 3.8.10.
 
-    'python3 filepath/euclidean_double_scale_distance.py /.config.yml`
+After cloning the [distance repo](https://github.com/PatrickRooney/distance) to your local directory, you will need to do the following to run the script using the example "toy" dataset:
 
-    for example, I have a virtual environment where python3 is stored in ./venv/bin and the python script is stored in ./python:
+Check that the values in the `config.yml` file have the correct pathnames.  Change them to appropriate values if you are not using the example dataset.
 
-    `./venv/bin/python3 ./python/euclideandoublescaledstoredistances.py /.config.yml`
-    
-    (note you may still get the warning "A value is trying to be set on a copy of a slice from a DataFrame" but it produces correct output)
+Activate the virtual environment
+    `./source venv/bin/activate`
+
+After filling the applicable values in the config.yml file, the script may be run at the Linux command line by issuing
+
+```
+python3 filepath/euclidean_double_scale_distance.py /.config.yml`
+```
+for example, I have a virtual environment where python3 is stored in `./venv/bin` and the python script is stored in `./python`:
+
+```
+./venv/bin/python3 ./python/euclideandoublescaledstoredistances.py /.config.yml
+```
+
+(note you may still get the warning "A value is trying to be set on a copy of a slice from a DataFrame" but it produces correct output)
     
  4.  Directory Structure
  
