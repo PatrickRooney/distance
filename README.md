@@ -1,7 +1,6 @@
-# Euclidean Double Scaled Distance README
+# Euclidean Double Scaled Distance
 
-1. Title: Euclidean Double Scaled Distance
-2. Project Description
+# Project Description
 
 Script to compute "double-scaled" Euclidean distance between units (e.g., zip codes, regions, DMA's, stores) across multiple attributes (e.g., sales, income, clicks).  The distance measure is from P. Barett, 2005, "Euclidean Distance: raw, normalized, and double-scaled coefficients" found at https://www.pbarrett.net/techpapers.html.  The Euclidean distance is scaled by the range of values for each attribute and by the number of attributes.  This enables the distance measure to be computed with reference to the largest possible range in the data across the attributes.  The distance measure can range from 0 to 1.  The similarity of any unit with another may be easily obtained by the formula similarity = 1 - distance.
 
@@ -12,6 +11,7 @@ We assume input data is a rectangular matrix with rows representing the units (e
 File paths and column names are stored in config.yml, so that the code does not need to be edited; just change the file paths/attributes in the config.yml file to read a new file or use a different set of attributes.
 
 The config.yml file contains the following:
+
     DATA_PATH: './data/'
     OUTPUT_PATH: './output/'
     INPUT_FILE: 'Wholesale_customers_samp.csv'
@@ -22,32 +22,36 @@ The config.yml file contains the following:
     OUTPUT_DIST: 'distance_matrix.csv'
     OUTPUT_PAIRS: 'distance_pairs.csv'
 
-
- 3. How to Install and Run the Project:
+# How to Install and Run the Project:
 
 I created the [distance repo](https://github.com/PatrickRooney/distance) on a laptop running Ubuntu version 20.04.5 and Python version 3.8.10.
 
 After cloning the [distance repo](https://github.com/PatrickRooney/distance) to your local directory, you will need to do the following to run the script using the example "toy" dataset:
 
-Check that the values in the `config.yml` file have the correct pathnames.  Change them to appropriate values if you are not using the example dataset.
+1. cd /distance
 
-Activate the virtual environment
+2. Check that the values in the `config.yml` file have the correct pathnames.  Change them to appropriate values if you are not using the example dataset.
+
+3. Activate the virtual environment
+
     `./source venv/bin/activate`
 
-After filling the applicable values in the config.yml file, the script may be run at the Linux command line by issuing
+4. Install python packages
+
+    `pip3 install requirements.txt`
+
+5. you may edit and run `euclidean_double_scaled_distance.py` with your favorite IDE, or run the script at the Linux command line by issuing
 
 ```
-python3 filepath/euclidean_double_scale_distance.py /.config.yml`
+python3 filepath/euclidean_double_scaled_distance.py /.config.yml
 ```
 for example, I have a virtual environment where python3 is stored in `./venv/bin` and the python script is stored in `./python`:
 
 ```
-./venv/bin/python3 ./python/euclideandoublescaledstoredistances.py /.config.yml
+./venv/bin/python3 ./python/euclidean_double_scaled_distance.py /.config.yml
 ```
-
-(note you may still get the warning "A value is trying to be set on a copy of a slice from a DataFrame" but it produces correct output)
-    
- 4.  Directory Structure
+ 
+# Directory Structure
  
  ```
 
