@@ -53,8 +53,8 @@ def run(config_path='./config.yml'):
     # initialize distance matrix
     dm = np.zeros((row_cnt, row_cnt))
 
-    for i in range(row_cnt-1):
-        for j in range(col_cnt-1):
+    for i in range(row_cnt):
+        for j in range(row_cnt):
             dm[i,j] = np.sqrt(sum( (arr[i,:] - arr[j,:])**2 / md))
             #dm[i,j] = np.sqrt(sum( ((df.iloc[i,:] - df.iloc[j,:])**2)**2 / md))
 
