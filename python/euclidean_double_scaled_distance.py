@@ -94,7 +94,7 @@ def run(config_path='./config.yml'):
 
     df_dimensions = df[config['DIMENSION_COLS']]
     # logging: df_temp.shape
-    # add column to join to df_pairs, although this throws a Warning message
+    # add entity_id column to join to df_pairs
     df_dimensions.reset_index(names=['temp'], inplace=True)
     df_dimensions = df_dimensions.copy()
     df_dimensions['entity_id'] = 'Store_' + df_dimensions['temp'].apply(str)
@@ -112,7 +112,7 @@ def run(config_path='./config.yml'):
 
     df_pairs = df_pairs.merge(df_dimensions, left_on='Pair_Member_2', right_on='entity_id')
     # logging: pairs_form3.shape
-    # rename dimension columns so it's clear they only apply to Pair_Member_1
+    # rename dimension columns so it's clear they only apply to Pair_Member_2
     for d in config['DIMENSION_COLS']:
         df_pairs.rename(columns = {d: 'Pair_Member_2' + '_' + d}, inplace=True)
     
